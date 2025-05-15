@@ -25,13 +25,18 @@ def sacar_depositar_dinheiro():
     escolha_dinheiro = input('Digite 1 se deseja sacar ou digite 2 se deseja depositar o dinheiro: ')
     print()
     if escolha_dinheiro == '1':
-        sacar = float(input('digite o valor que deseja sacar: '))
-        saldo_saque = (saldo - sacar)
-        print(f'seu novo saldo é de: {saldo_saque}')
+        while True:
+            sacar = float(input('digite o valor que deseja sacar: '))
+            if sacar > saldo:
+                print('Erro: Saldo insuficiente')
+            else:
+                saldo_saque = (saldo - sacar)
+                print(f'O saque de R${sacar} foi feito com sucesso, seu novo saldo é de R$:{saldo_saque}')
+                break
     elif escolha_dinheiro == '2':
         depositar = float(input('digite o valor que deseja depositar: '))
         saldo_deposito = (saldo + depositar)
-        print(f'seu novo saldo é de: {saldo_deposito}')
+        print(f'O deposito de R${depositar} foi feito com sucesso, seu novo saldo é de R$:{saldo_deposito}')
     else:
         escolha_invalida()
 
