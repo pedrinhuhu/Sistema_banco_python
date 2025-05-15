@@ -1,0 +1,2 @@
+# Sistema_banco_python
+Uma simulação de um sistema de banco simples.
